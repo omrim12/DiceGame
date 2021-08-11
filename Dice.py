@@ -11,6 +11,3 @@ class Dice:  # simulates a player's randomization tool to accumulate random valu
 
     def get_value(self):
         return self.value
-
-
-

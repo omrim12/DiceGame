@@ -19,7 +19,6 @@ class Game:  # main program's component. handles all players involved and their 
         while self.num_players <= 0:
             self.num_players = int(input("Invalid number of players. Try again: "))
 
-        buffer = ""
         for i in range(self.num_players):
             buffer = input("Enter name of player no. {}: ".format(i+1))
             while buffer == "":
@@ -34,13 +33,13 @@ class Game:  # main program's component. handles all players involved and their 
                 player.play()
 
         # winner finding
-        winner = Player("None")
         max_score = 0
+        winner = Player("None")
 
         for player in self.players:
             if player.get_score() > max_score:
                 winner = player
 
         # outputting the game's result.
-        print("Congratulations {0} ! you've won with the highest score of: {1}".format(player.get_name(),
-                                                                                       player.get_score()))
+        print("Congratulations {0} ! you've won with the highest score of: {1}".format(winner.get_name(),
+                                                                                       winner.get_score()))
